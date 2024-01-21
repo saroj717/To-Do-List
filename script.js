@@ -15,8 +15,9 @@ $.ajax({
         var checkbox = $('<input type="checkbox">');
         var span = $('<span>').text('x');
         if(task.completed === true){
-          checkbox.attr("checked")
+          checkbox.attr("checked");
         }
+
         listContainer.append(li);
         li.append(checkbox);
         li.append(span);
@@ -47,9 +48,11 @@ $.ajax({
       success: function (response, textStatus) {
         console.log(response);
         var li = $('<li>').text(inputValue).attr("id", response.task.id); 
+        var checkbox = $('<input type="checkbox">');
         listContainer.append(li);
         
         var span = $('<span>').text('x');
+        li.append(checkbox);
         li.append(span);
       },
       error: function (request, textStatus, errorMessage) {
@@ -82,7 +85,7 @@ $.ajax({
     });
 
     if (e.target.tagName === 'LI') {
-      console.log(e.target.classList)
+      // console.log(e.target.classList)
 
       e.target.classList.toggle('checked');
       // make put call to update
