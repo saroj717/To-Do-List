@@ -101,10 +101,7 @@ $.ajax({
           console.log(errorMessage);
         }
       });
-
       e.target.parentElement.remove();
-
-
     }
   })
 }); 
